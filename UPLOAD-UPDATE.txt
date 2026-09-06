@@ -1,11 +1,9 @@
-KneeFit v3 update
+KneeFit v5
 
-Upload ALL files in this folder to the ROOT of your GitHub kneefit repository, replacing files with the same names.
+Upload all files in this folder to the root of the GitHub Pages repository, replacing the existing files.
+Do not delete the Home Screen app. Existing data remains under the same localStorage key: kneefit-v1.
 
-This version adds:
-- Diet tab with Monday-Sunday weekly calorie/protein tracking
-- No sugar + No alcohol daily habits on Today and Diet
-- History calendar: large ✓ for completed workouts, green dot for no sugar, blue dot for no alcohol
-- Root-level icon paths and fresh cache version
-
-Your existing local data stays under the same kneefit-v1 storage key.
+New in v5:
+- Export Backup in Targets & workout plan
+- Import Backup with confirmation before replacing local data
+- Backup includes targets, workout history, exercise weights, food, body weight, knee logs, habits, and custom exercise prescriptions
