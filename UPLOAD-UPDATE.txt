@@ -1,11 +1,11 @@
-KneeFit v2 update
+KneeFit v3 update
 
-In GitHub, open the kneefit repository and replace/upload these files at the repository root:
-- index.html
-- manifest.json
-- service-worker.js
-- icons/ folder (icons are unchanged, but safe to keep/upload)
+Upload ALL files in this folder to the ROOT of your GitHub kneefit repository, replacing files with the same names.
 
-The two files that must change are index.html and service-worker.js.
-Commit the changes to the main branch. GitHub Pages will redeploy automatically.
-If the Home Screen app still shows the old interface after deployment, fully close KneeFit and reopen it. The v2 service worker uses a new cache name and should refresh the app.
+This version adds:
+- Diet tab with Monday-Sunday weekly calorie/protein tracking
+- No sugar + No alcohol daily habits on Today and Diet
+- History calendar: large ✓ for completed workouts, green dot for no sugar, blue dot for no alcohol
+- Root-level icon paths and fresh cache version
+
+Your existing local data stays under the same kneefit-v1 storage key.
