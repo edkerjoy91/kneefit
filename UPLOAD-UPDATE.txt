@@ -1,9 +1,13 @@
-KneeFit v5
+KneeFit v6 — Minimal visual redesign
 
 Upload all files in this folder to the root of the GitHub Pages repository, replacing the existing files.
-Do not delete the Home Screen app. Existing data remains under the same localStorage key: kneefit-v1.
+Do NOT delete the Home Screen app.
+All existing data is preserved because the app still uses localStorage key: kneefit-v1.
 
-New in v5:
-- Export Backup in Targets & workout plan
-- Import Backup with confirmation before replacing local data
-- Backup includes targets, workout history, exercise weights, food, body weight, knee logs, habits, and custom exercise prescriptions
+Changes in v6:
+- Dieter Rams-inspired minimal dark visual system
+- Reduced card chrome and rounded rectangles
+- Thin rules and clearer typographic hierarchy
+- Restrained acid-green accent for active/progress states
+- Minimal tabs, buttons, forms, workout rows, diet rows, history and settings
+- All v5 functionality retained, including Targets, editable prescriptions, Export Backup and Import Backup

@@ -7,8 +7,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="KneeFit" />
-  <link rel="manifest" href="manifest.json?v=5" />
-  <link rel="apple-touch-icon" href="icon-180.png?v=5" />
+  <link rel="manifest" href="manifest.json?v=6" />
+  <link rel="apple-touch-icon" href="icon-180.png?v=6" />
   <title>KneeFit</title>
   <style>
     :root{--bg:#0b0b0c;--card:#161719;--card2:#1d1f22;--text:#f6f7f8;--muted:#a6abb3;--line:#2b2e33;--accent:#7cb342;--danger:#ff6b6b;--warn:#f7c948;--safe:#59c36a;--alcohol:#4da3ff}
@@ -28,6 +28,432 @@
   .exerciseSetting{display:grid;grid-template-columns:minmax(0,1fr) minmax(130px,42%);gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06)}
   .exerciseSettingName{font-size:14px;font-weight:650}
   .exerciseSetting input{width:100%;box-sizing:border-box}
+
+  /* KneeFit v6 — Minimal / Dieter Rams-inspired visual system */
+  :root{
+    --bg:#0a0a0a;
+    --card:#0a0a0a;
+    --card2:#121212;
+    --text:#f1f1ef;
+    --muted:#9a9a96;
+    --line:#363633;
+    --accent:#d9ff3f;
+    --danger:#ff6b6b;
+    --warn:#e3c75b;
+    --safe:#d9ff3f;
+    --alcohol:#9a9a96;
+  }
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    letter-spacing:-.005em;
+  }
+
+  .app{
+    max-width:720px;
+    padding:calc(env(safe-area-inset-top) + 22px) 20px calc(env(safe-area-inset-bottom) + 34px);
+  }
+
+  .top{
+    align-items:flex-end;
+    margin-bottom:22px;
+    padding-bottom:18px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .eyebrow{
+    font-size:14px;
+    line-height:1.2;
+    margin-bottom:7px;
+    color:var(--muted);
+  }
+
+  .title{
+    font-size:35px;
+    line-height:.98;
+    font-weight:620;
+    letter-spacing:-.045em;
+  }
+
+  .sub{
+    margin-top:10px;
+    font-size:14px;
+    line-height:1.35;
+    color:var(--muted);
+  }
+
+  .pill{
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:10px 16px;
+    min-height:44px;
+    font-weight:500;
+  }
+
+  .tabs{
+    gap:0;
+    margin:0 0 28px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .tab{
+    min-height:50px;
+    padding:12px 4px 13px;
+    border:0;
+    border-radius:0;
+    background:transparent;
+    color:var(--muted);
+    border-bottom:2px solid transparent;
+    font-size:15px;
+  }
+
+  .tab.active{
+    background:transparent;
+    color:var(--text);
+    border:0;
+    border-bottom:2px solid var(--accent);
+    font-weight:650;
+  }
+
+  .section{margin-top:30px}
+  main > section:first-child{margin-top:0}
+
+  .sectionHead{
+    margin-bottom:12px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .sectionHead h2{
+    font-size:22px;
+    font-weight:560;
+    letter-spacing:-.025em;
+  }
+
+  .small,.label,.exScheme,.foodMeta,.trend,.field span,.dietMetrics,.calSummary,.legendItem{
+    color:var(--muted);
+  }
+
+  .card,.exercise,.listItem,.habitToggle,.dietDay,.calendar,.chart{
+    background:transparent;
+    border:0;
+    border-radius:0;
+  }
+
+  .card{
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .grid2{
+    gap:28px;
+  }
+
+  .grid2 > .card{
+    border-top:1px solid var(--line);
+  }
+
+  .metric{
+    font-size:38px;
+    line-height:1;
+    font-weight:560;
+    letter-spacing:-.05em;
+  }
+
+  .label{
+    font-size:13px;
+    margin-top:8px;
+  }
+
+  .bar{
+    height:3px;
+    margin-top:17px;
+    background:#292927;
+    border-radius:0;
+  }
+
+  .fill{
+    background:var(--accent);
+    border-radius:0;
+  }
+
+  .btn{
+    min-height:44px;
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:999px;
+    color:var(--text);
+    padding:10px 16px;
+  }
+
+  .btn.primary{
+    background:var(--accent);
+    border-color:var(--accent);
+    color:#0b0b0a;
+    font-weight:650;
+  }
+
+  input,textarea{
+    background:transparent;
+    border:0;
+    border-bottom:1px solid var(--line);
+    border-radius:0;
+    padding:11px 2px;
+  }
+
+  input:focus,textarea:focus{
+    border-color:var(--accent);
+  }
+
+  .foodRow{
+    gap:14px;
+    padding:4px 0 14px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .foodRow .btn.primary{
+    width:44px;
+    min-width:44px;
+    padding:0;
+    border-radius:50%;
+  }
+
+  .listItem{
+    padding:15px 0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .listItem + .listItem{
+    margin-top:0;
+  }
+
+  .foodName,.exName{
+    font-weight:560;
+    letter-spacing:-.01em;
+  }
+
+  .exercise{
+    padding:18px 0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .exercise.done{
+    opacity:.45;
+  }
+
+  .weightLine,.split{
+    margin-top:14px;
+  }
+
+  .sideBox{
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:0;
+    padding:12px;
+  }
+
+  .checkBox{
+    width:24px;
+    height:24px;
+    border:1px solid #6f6f6a;
+    border-radius:0;
+    background:transparent;
+  }
+
+  .checkBox::after{
+    color:#0a0a09;
+    font-size:17px;
+  }
+
+  .checkControl input:checked + .checkBox{
+    background:var(--accent);
+    border-color:var(--accent);
+  }
+
+  .setChecks{
+    gap:10px;
+    margin-top:13px;
+  }
+
+  .setCheck{
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:0;
+    padding:4px 10px 4px 7px;
+  }
+
+  .habitCard{
+    gap:0;
+    border-top:1px solid var(--line);
+  }
+
+  .habitToggle{
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .habitToggle:first-child{
+    padding-right:16px;
+    border-right:1px solid var(--line);
+  }
+
+  .habitToggle:last-child{
+    padding-left:16px;
+  }
+
+  .dayNav{
+    gap:0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+
+  .dayBtn{
+    background:transparent;
+    border:0;
+    border-radius:0;
+    color:var(--muted);
+    padding:12px 4px;
+  }
+
+  .dayBtn.active{
+    background:transparent;
+    color:var(--text);
+    border-bottom:2px solid var(--accent);
+    font-weight:650;
+  }
+
+  .notice{
+    border:1px solid var(--line);
+    background:transparent;
+    border-radius:0;
+  }
+
+  .dietWeek{
+    gap:0;
+  }
+
+  .dietDay{
+    padding:17px 0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .dietDay.today{
+    outline:0;
+    border-left:3px solid var(--accent);
+    padding-left:12px;
+  }
+
+  .calendar{
+    padding:0;
+  }
+
+  .calTop{
+    margin-bottom:14px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:12px;
+  }
+
+  .calNav{
+    width:40px;
+    height:40px;
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:50%;
+  }
+
+  .calDay{
+    border-radius:0;
+  }
+
+  .calDay.scheduled{
+    background:transparent;
+    border-color:transparent;
+  }
+
+  .calDay.complete{
+    background:transparent;
+    border:1px solid var(--accent);
+  }
+
+  .calDay.today{
+    outline:0;
+    background:#171715;
+  }
+
+  .calCheck{
+    color:var(--accent);
+  }
+
+  .legendDot.sugar{background:var(--accent)}
+  .legendDot.alcohol{background:#9a9a96}
+
+  .chart{
+    padding:8px 0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+
+  .axis{stroke:#343431}
+  .line{stroke:var(--accent)}
+  .dot{fill:var(--accent)}
+
+  .settingsOverlay{
+    background:rgba(0,0,0,.88);
+    padding:0;
+  }
+
+  .settingsPanel{
+    max-width:720px;
+    min-height:100%;
+    margin:0 auto;
+    background:#0a0a0a;
+    border:0;
+    border-radius:0;
+    padding:calc(env(safe-area-inset-top) + 24px) 20px calc(env(safe-area-inset-bottom) + 34px);
+    box-shadow:none;
+  }
+
+  .settingsGroup{
+    margin-top:28px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+  }
+
+  .settingsGroup h3{
+    font-size:18px;
+    font-weight:560;
+    letter-spacing:-.02em;
+  }
+
+  .exerciseSetting{
+    grid-template-columns:minmax(0,1fr) minmax(130px,44%);
+    padding:13px 0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .exerciseSettingName{
+    font-weight:520;
+  }
+
+  .footerNote{
+    margin-top:32px;
+    padding-top:16px;
+    border-top:1px solid var(--line);
+    color:#70706c;
+  }
+
+  @media(max-width:520px){
+    .app{padding-left:20px;padding-right:20px}
+    .title{font-size:34px}
+    .metric{font-size:36px}
+    .grid2{gap:20px}
+    .foodRow{grid-template-columns:minmax(0,1fr) 68px 58px 44px;gap:9px}
+    .weightLine{grid-template-columns:1fr 105px}
+    .settingsPanel{padding-left:20px;padding-right:20px}
+  }
+
 </style>
 </head>
 <body>
